@@ -15,10 +15,16 @@ const {
  */
 function getSeason(date) {
   if (!date) {
-    return 'Unable to determine the time of year!';
+    return "Unable to determine the time of year!";
   }
+
   if (!(date instanceof Date)) {
-    throw new Error('Invalid date!');
+    throw new Error("Invalid date!");
+  }
+
+  // Due to real Date has all its properties in prototype.
+  if (Object.keys(date).length > 0) {
+    throw new Error("Invalid date!");
   }
 
   let initDate = new Date(date);
