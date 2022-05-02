@@ -22,7 +22,6 @@ function getSeason(date) {
     throw new Error("Invalid date!");
   }
 
-  // Due to real Date has all its properties in prototype.
   if (Object.keys(date).length > 0) {
     throw new Error("Invalid date!");
   }
